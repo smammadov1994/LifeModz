@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+  </head>
+  <body>
+    <h1>Edit Task Page</h1>
+    <form action="/todo/<%=tasks.id%>?_method=PUT" method="POST">
+      Name: <input type="text" name="name" value="<%=tasks.name%>" /><br />
+      Time: <input type="text" name="time" value="<%=tasks.time%>" /><br />
+      Info: <input type="text" name="info" value="<%=tasks.info%>" /><br />
+      <input type="submit" name="" value="Submit Changes" />
+    </form>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <title>New Item</title>
+  </head>
+  <body>
+    <h1>New Item</h1>
+    <div class="hero-wrapper">
+      <div class="container">
+        <form action="/todo" method="POST">
+          <h3>Task:</h3>
+          <input type="text" name="name" /><br />
+          <h3>Time:</h3>
+          <input type="text" name="time" /><br />
+          <h3>Info:</h3>
+          <input type="text" name="info" /><br />
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
