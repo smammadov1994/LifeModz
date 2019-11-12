@@ -1,12 +1,66 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        background-image: url("https://pbs.twimg.com/media/DjOP2PlX0AA50fG.jpg");
+        background-size: 370px;
+        background-position-y: bottom;
+        background-repeat: no-repeat;
+
+        height: 100vh;
+        width: 100vw;
+        justify-items: center;
+        align-items: center;
+      }
+
+      h1 {
+        font-weight: 700;
+        font-size: 100px;
+        font-family: monospace;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      nav {
+        display: flex;
+        width: inherit;
+        height: 200px;
+        padding-top: 30px;
+        align-items: flex-start;
+      }
+
+      a {
+        color: white;
+        padding: 12px;
+        display: inline;
+        justify-content: center;
+        position: relative;
+        margin: 5px;
+        border-radius: 5px;
+        text-decoration: none;
+      }
+      h3 {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        font-size: 40px;
+        background-color: salmon;
+        padding: 10px;
+        font-weight: 700;
+        color: white;
+        font-family: Georgia, "Times New Roman", Times, serif;
+      }
+    </style>
     <meta charset="utf-8" />
     <title>Item Display</title>
   </head>
   <body>
     <h1>Item Display Page</h1>
-    <h3>The task is to: <%=tasks.name%> and it is at: <%=tasks.time%>.</h3>
+    <h3>The task is to: <%=tasks.name%> and it is at: <%=tasks.time%>.
     <h3><%=tasks.info%></h3>
     <nav>
       <a href="/todo">Back to Items Index</a>

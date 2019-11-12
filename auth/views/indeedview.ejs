@@ -8,6 +8,82 @@
       crossorigin="anonymous"
     />
     <style>
+      body {
+        display: flex;
+        background-image: url("");
+        background-size: 370px;
+        background-position-y: bottom;
+        background-repeat: no-repeat;
+        height: 100vh;
+        width: 100vw;
+        justify-items: center;
+        align-items: center;
+      }
+      .hero-wrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      h1 {
+        font-weight: 700;
+        font-size: 80px;
+
+        font-family: monospace;
+        display: flex;
+        align-items: center;
+        padding: 30px;
+      }
+      nav {
+        display: flex;
+        width: inherit;
+        height: 200px;
+        padding-top: 30px;
+        align-items: flex-start;
+      }
+      .new-item {
+        font-size: 30px;
+
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 20px;
+      }
+      ul {
+        display: flex;
+        box-sizing: border-box;
+        list-style-type: none;
+        justify-content: center;
+        margin-top: 200px;
+        flex-wrap: wrap;
+        overflow: hidden;
+      }
+      li {
+        background-color: rgb(54, 143, 173);
+        padding: 30px;
+        margin: 20px;
+        text-decoration: none;
+        border-radius: 12px;
+      }
+
+      .btn-primary {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        height: 40px;
+        border: none;
+        margin-top: 10px;
+      }
+      form {
+        display: flex;
+        justify-content: center;
+      }
+      input {
+        display: flex;
+        margin: 10px;
+        padding: 5px;
+      }
+
       .table {
         display: flex;
         justify-content: center;
@@ -21,7 +97,7 @@
       }
 
       th {
-        background-color: black;
+        background-color: PURPLE !important;
         width: 500px;
       }
     </style>
@@ -29,10 +105,15 @@
     <title>Results</title>
   </head>
   <body>
-    <h1>Search Results Page</h1>
-    <nav>
-      <a href="/indeed/new">Go Back</a>
-    </nav>
+    <div class="hero-wrapper">
+      <h1>Search, Find, Conquer:)</h1>
+      <nav>
+        <a href="/indeed/new"
+          ><img
+            src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/132.png"
+        /></a>
+      </nav>
+    </div>
     <ul>
       <% for(let i = 0; i < search.length; i++){ %>
       <table class="table">
