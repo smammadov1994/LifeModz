@@ -1,30 +1,127 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <style>
+      body {
+        display: grid;
+        justify-items: center;
+        align-items: center;
+      }
+
+      h1 {
+        width: max-content;
+        font-weight: 700;
+        font-size: 100px;
+        font-family: monospace;
+        display: flex;
+        align-items: center;
+      }
+      h1 div {
+        font-size: 30px;
+        font-weight: 500;
+      }
+      .hero-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        justify-items: self-end;
+      }
+      .button-wrapper {
+        width: 600px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .button {
+        background-color: rgb(118, 32, 145);
+        color: wheat;
+        display: flex;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-right: 20px;
+        padding-left: 20px;
+        justify-content: center;
+        margin: 5px;
+        width: 100px;
+        border-radius: 5px;
+      }
+      a {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: white;
+      }
+
+      .login {
+        justify-self: left;
+        color: white;
+      }
+      .register {
+        justify-self: right;
+        color: white;
+      }
+      img {
+        height: 250px;
+      }
+      nav {
+        display: flex;
+        justify-content: flex-end;
+        background-color: purple;
+        width: 200px;
+        height: 200px;
+      }
+      .logout {
+        display: flex;
+        background-color: white;
+        color: black;
+        font-family: monospace;
+        display: flex;
+        padding: 12px;
+        justify-content: center;
+        margin: 12px;
+        width: 100px;
+        font-weight: 900;
+        font-size: 15px;
+        border-radius: 8px;
+      }
+      .goto {
+        background-color: rgb(118, 32, 145);
+        color: white;
+        font-size: 20px;
+        font-weight: 400;
+        justify-content: center;
+        margin: 5px;
+        padding: 30px;
+        border-radius: 5px;
+      }
+    </style>
+
     <meta charset="utf-8" />
     <title>Logged In</title>
   </head>
 
   <body>
-    <h1>
-      <% if(currentUser) { %> Welcome <%=currentUser.username%>! <% } else { %>
-      Welcome! <% } %>
-      <ul>
-        <li><a href="/sessions/new">Log In</a></li>
-        <li><a href="/users/new">Register</a></li>
-    </h1>
-    <nav>
-      <ul>
-        <% if(currentUser) { %>
-        <li>
-          <form action="/sessions?_method=DELETE" method="POST">
-            <input type="submit" value="Logout" />
-          </form>
-        </li>
-        <main><a href="/todo/new">Create a new item </a></main>
-        <main><a href="/indeed/new">Use Job Scraper </a></main>
-        <% } %>
-      </ul>
-    </nav>
+    <div class="hero-wrapper">
+      <div class="button login"><a href="/sessions/new">Log In</a></div>
+      <div class="button register"><a href="/users/new">Register</a></div>
+
+      <form action="/sessions?_method=DELETE" method="POST">
+        <input type="submit" value="Logout." class="logout" />
+      </form>
+    </div>
+
+    <div class="button-wrapper">
+      <h1>
+        <% if(currentUser) { %> Welcome <%=currentUser.username%>! %>
+        <img src="https://leviathyn.com/wp-content/uploads/2012/12/dit.jpg" />
+      </h1>
+      <div class="goto"><a href="/todo/new">Create a new item </a></div>
+      <div class="goto"><a href="/indeed/new">Use Job Scraper </a></div>
+      <%} else {%>
+      <h1>Welcome!</h1>
+      <img
+        src="https://66.media.tumblr.com/49ca735f4af7faa918e4332e8709d9fd/tumblr_pacdaxHwDL1r3z12uo2_250.png"
+      />
+      <% } %>
+    </div>
   </body>
 </html>

@@ -2,26 +2,136 @@
 <html>
   <head>
     <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
     <title>To Do List</title>
+    <style>
+      body {
+        display: grid;
+        background-image: url("https://pbs.twimg.com/media/DjOP2PlX0AA50fG.jpg");
+        background-size: 370px;
+        background-position-y: bottom;
+        background-repeat: no-repeat;
+        grid-template-rows: 600px 1fr;
+        height: 100vh;
+        width: 100vw;
+        justify-items: center;
+        align-items: center;
+      }
+
+      h1 {
+        font-weight: 700;
+        font-size: 100px;
+        font-family: monospace;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      nav {
+        display: flex;
+        width: inherit;
+        height: 200px;
+        padding-top: 30px;
+        align-items: flex-start;
+      }
+      .new-item{
+        font-size: 30px;;
+
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 20px;
+      }
+      ul {
+      display: flex;
+    box-sizing: border-box;
+    list-style-type: none;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+      li {
+        background-color: rgb(54, 143, 173);
+        padding: 30px;
+        margin: 20px;
+        text-decoration: none;
+        border-radius: 12px;
+       
+      }
+    
+
+      a {
+        color: white;
+        padding: 12px;
+        display: inline;
+        justify-content: center;
+        position: relative;
+        margin: 5px;
+        border-radius: 5px;
+        text-decoration: none;
+      }
+
+      .event {
+        font-size:30px;
+        font-weight: 400;
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+      }
+      .edittask{
+        background-color: tomato;
+        color:white !important;
+      }
+      .delete{
+        border:none;
+    background-image:none;
+    background-color:yellowgreen;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    color: white;
+    padding: 12px;
+    display: inline;
+    justify-content: center;
+    position: relative;
+    margin: 5px;
+    border-radius: 5px;
+      }
+      .buttons{
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+      }
+      img{
+        height:200px;
+      }
+
+
+    </style>
   </head>
   <body>
-    <h1>Item Index Page</h1>
-    <nav>
-      <div><a href="/todo/new">Create a New Item</a></div>
-      <div><a href="/">Go back to Main</a></div>
-    </nav>
+    <h1>Item Index Page
+     
+    <div class = "new-item"><a href="/todo/new"> <img src ="https://vignette.wikia.nocookie.net/p-quest/images/1/15/Ditto_Balloon.png/revision/latest?cb=20180831042443"></a></div>
+  </h1>
     <ul>
       <% for(let i = 0; i < tasks.length; i++){ %>
       <li>
         <a href="/todo/<%=tasks[i]._id%>">
-          <%=tasks[i].name; %> at <%=tasks[i].time; %>.</a
+          <div class ="event"><%=tasks[i].name; %> at <%=tasks[i].time; %>.</a
         >
-        <form action="/todo/<%=tasks[i]._id%>?_method=DELETE" method="POST">
-          <input type="submit" value="DELETE" />
-        </form>
-        <a href="/todo/<%=tasks[i]._id%>/edit">Edit Task</a>
+          </div>
+          <div class="buttons">
+              <a href="/todo/<%=tasks[i]._id%>/edit" class ="edittask">Edit Task</a>
+              <form action="/todo/<%=tasks[i]._id%>?_method=DELETE" method="POST">
+                <input type="submit" value="DELETE" class = "delete" />
+              </form>
+          </div>
       </li>
-      <% } %>
+        <% } %>
     </ul>
   </body>
 </html>

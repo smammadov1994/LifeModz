@@ -1,19 +1,86 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <style>
+      body {
+        display: flex;
+        box-sizing: border-box;
+        padding-top: 20px;
+        flex-direction: column;
+        background-image: url("https://pbs.twimg.com/media/DjOP2PlX0AA50fG.jpg");
+        background-size: 370px;
+        background-position-y: bottom;
+        background-repeat: no-repeat;
+        height: 100vh;
+        width: 100vw;
+        justify-items: center;
+        align-items: center;
+      }
+      img {
+        position: relative;
+      }
+
+      h1 {
+        font-weight: 700;
+        font-size: 100px;
+        font-family: monospace;
+        display: flex;
+        align-items: center;
+      }
+      h1 div {
+        font-size: 30px;
+        font-weight: 500;
+      }
+      .hero-wrapper {
+        margin: 0 auto;
+      }
+      input {
+        padding: 10px;
+      }
+      a {
+        text-decoration: none;
+        color: white;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        width: 500px;
+        margin: 0 auto;
+      }
+
+      button {
+        height: 100px;
+        color: white;
+      }
+    </style>
     <meta charset="utf-8" />
     <title></title>
   </head>
   <body>
-    <h1>Edit Task Page</h1>
-    <nav>
-      <a href="/">Go back to Main</a>
-    </nav>
-    <form action="/todo/<%=tasks.id%>?_method=PUT" method="POST">
-      Name: <input type="text" name="name" value="<%=tasks.name%>" /><br />
-      Time: <input type="text" name="time" value="<%=tasks.time%>" /><br />
-      Info: <input type="text" name="info" value="<%=tasks.info%>" /><br />
-      <input type="submit" name="" value="Submit Changes" />
-    </form>
+    <div class="hero-wrapper">
+      <h1>Edit Task Page</h1>
+      <nav>
+        <a href="/">Go back to Main</a>
+      </nav>
+      <form action="/todo/<%=tasks.id%>?_method=PUT" method="POST">
+        Name: <input type="text" name="name" value="<%=tasks.name%>" /><br />
+        Time: <input type="text" name="time" value="<%=tasks.time%>" /><br />
+        Info: <input type="text" name="info" value="<%=tasks.info%>" /><br />
+        <button
+          type="submit"
+          name=""
+          value="Submit Changes"
+          class="btn btn-primary"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
   </body>
 </html>

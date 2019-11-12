@@ -2,7 +2,6 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="/css/main.css" />
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -10,13 +9,60 @@
       crossorigin="anonymous"
     />
     <title>New Item</title>
+    <style>
+      body {
+        display: flex;
+        box-sizing: border-box;
+        padding-top: 20px;
+        flex-direction: column;
+        background-image: url("https://pbs.twimg.com/media/DjOP2PlX0AA50fG.jpg");
+        background-size: 370px;
+        background-position-y: bottom;
+        background-repeat: no-repeat;
+        height: 100vh;
+        width: 100vw;
+        justify-items: center;
+        align-items: center;
+      }
+      img {
+        position: relative;
+      }
+
+      h1 {
+        font-weight: 700;
+        font-size: 100px;
+        font-family: monospace;
+        display: flex;
+        align-items: center;
+      }
+      h1 div {
+        font-size: 30px;
+        font-weight: 500;
+      }
+      .hero-wrapper {
+        margin: 0 auto;
+      }
+      input {
+        padding: 10px;
+      }
+      a {
+        text-decoration: none;
+        color: white;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+    </style>
   </head>
   <body>
-    <h1>New Item</h1>
-    <nav>
-      <a href="/">Go back to Main</a>
-    </nav>
+    <a href="/">
+      <img
+        src="https://seeklogo.com/images/D/ditto-logo-BB257AF762-seeklogo.com.png"
+    /></a>
+
     <div class="hero-wrapper">
+      <h1>New Item</h1>
       <div class="container">
         <form action="/todo" method="POST">
           <h3>Task:</h3>
