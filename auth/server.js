@@ -3,6 +3,8 @@ const mongoose = require("mongoose");
 const session = require("express-session");
 const methodOverride = require("method-override");
 const toDo = require("./models/todo");
+const indeed = require("./models/indeed");
+const IndeedService = require("scrape-indeed")();
 
 const app = express();
 
@@ -16,6 +18,7 @@ mongoose.connection.once("open", () => {
 // CONTROLLERS
 const usersController = require("./controllers/users.js");
 const sessionsController = require("./controllers/sessions.js");
+const indeedController = require("./controllers/router.js");
 
 // MIDDLEWARE
 app.use(methodOverride("_method"));
@@ -29,6 +32,7 @@ app.use(
 );
 app.use("/users", usersController);
 app.use("/sessions", sessionsController);
+app.use(indeedController);
 
 app.get("/", (req, res) =>
   res.render("index.ejs", {

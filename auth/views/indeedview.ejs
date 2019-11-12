@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <style>
+      .table {
+        display: flex;
+        justify-content: center;
+      }
+      thead {
+        border: black solid 4px;
+        width: 500px;
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+
+      th {
+        background-color: black;
+        width: 500px;
+      }
+    </style>
+    <meta charset="utf-8" />
+    <title>Results</title>
+  </head>
+  <body>
+    <h1>Search Results Page</h1>
+    <nav>
+      <a href="/indeed/new">Go Back</a>
+    </nav>
+    <ul>
+      <% for(let i = 0; i < search.length; i++){ %>
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Title</th>
+          </tr>
+          <tr>
+            <th scope="col">Company</th>
+          </tr>
+          <tr>
+            <th scope="col">Location</th>
+          </tr>
+          <tr>
+            <td><%=search[i].title%></td>
+          </tr>
+          <tr>
+            <td><%=search[i].company%></td>
+          </tr>
+          <tr>
+            <td><%=search[i].location%></td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr></tr>
+        </tbody>
+      </table>
+      <% } %>
+    </ul>
+  </body>
+</html>

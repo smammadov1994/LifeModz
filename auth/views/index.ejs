@@ -9,11 +9,12 @@
     <h1>
       <% if(currentUser) { %> Welcome <%=currentUser.username%>! <% } else { %>
       Welcome! <% } %>
-    </h1>
-    <nav>
       <ul>
         <li><a href="/sessions/new">Log In</a></li>
         <li><a href="/users/new">Register</a></li>
+    </h1>
+    <nav>
+      <ul>
         <% if(currentUser) { %>
         <li>
           <form action="/sessions?_method=DELETE" method="POST">
@@ -21,6 +22,7 @@
           </form>
         </li>
         <main><a href="/todo/new">Create a new item </a></main>
+        <main><a href="/indeed/new">Use Job Scraper </a></main>
         <% } %>
       </ul>
     </nav>
